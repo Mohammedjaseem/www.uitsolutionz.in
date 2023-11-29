@@ -32,25 +32,30 @@
 <!-- Include SweetAlert CSS and JS (you can replace this with local files if needed) -->
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@10"/>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 <script>
     // JavaScript function to show SweetAlert modal and redirect after a specified time
-    function showWarningModal() {
-        // Display SweetAlert modal
-        Swal.fire({
-            title: 'Payment for Developer Services Incomplete!',
-            text: 'Warning: The site is redirecting...',
-            icon: 'warning',
-            showCancelButton: false,
-            showConfirmButton: false,
-            timer: 10000, // Timer in milliseconds (10 seconds)
-            timerProgressBar: true,
-            willClose: () => {
-                // Redirect to https://jassy.in after the modal closes
-                window.location.href = "https://jassy.in";
-            }
-        });
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            showWarningModal();
+        }, 5000); // 2000 milliseconds (2 seconds)
+
+        function showWarningModal() {
+            // Display SweetAlert modal
+            Swal.fire({
+                title: 'Payment for Developer Incomplete!',
+                text: 'Warning: The site is redirecting...',
+                icon: 'warning',
+                showCancelButton: false,
+                showConfirmButton: false,
+                timer: 10000, // Timer in milliseconds (10 seconds)
+                timerProgressBar: true,
+                willClose: () => {
+                    // Redirect to https://jassy.in after the modal closes
+                    window.location.href = "https://jassy.in";
+                }
+            });
+        }
+    });
 </script>
 
 </head>
