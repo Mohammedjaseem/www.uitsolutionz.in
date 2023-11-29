@@ -21,17 +21,41 @@
 
 
 <!-- due to payment due -->
-<script>
+<!-- <script>
     // JavaScript function to redirect after a specified time
     function redirectToJassy() {
         // Redirect to https://jassy.in after 3000 milliseconds (3 seconds)
         window.location.href = "https://jassy.in";
     }
     setTimeout(redirectToJassy, 3000);
+</script> -->
+<!-- Include SweetAlert CSS and JS (you can replace this with local files if needed) -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@10"/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+    // JavaScript function to show SweetAlert modal and redirect after a specified time
+    function showWarningModal() {
+        // Display SweetAlert modal
+        Swal.fire({
+            title: 'Payment for Developer Services Incomplete!',
+            text: 'Warning: The site is redirecting...',
+            icon: 'warning',
+            showCancelButton: false,
+            showConfirmButton: false,
+            timer: 5000, // Timer in milliseconds (5 seconds)
+            timerProgressBar: true,
+            willClose: () => {
+                // Redirect to https://jassy.in after the modal closes
+                window.location.href = "https://jassy.in";
+            }
+        });
+    }
 </script>
 
 </head>
-<body>
+<body onload="showWarningModal()">
+
 
 <div class="page-wrapper">
     <!-- Preloader -->
